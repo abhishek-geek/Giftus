@@ -6,6 +6,7 @@ class Gifts extends Component {
     total: 10,
   };
   render() {
+    const category = this.props.match.params.category;
     let arr = [];
 
     for (let i = 1; i <= this.state.total; i++) {
@@ -14,7 +15,7 @@ class Gifts extends Component {
 
     return (
       <div>
-        <h1>Your Gifts here --:</h1>
+        <h1>Your Gifts from {category} here --:</h1>
         {arr.map((i) => (
           <div key={i}>
             <Gift />
