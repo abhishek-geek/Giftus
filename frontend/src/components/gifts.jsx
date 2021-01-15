@@ -11,7 +11,7 @@ class Gifts extends Component {
     for (let i = 1; i <= this.state.total; i++) {
       arr.push(i);
     }
-
+    
     return (
       <div>
         <h1>Your Gifts here --:</h1>
