@@ -1,66 +1,15 @@
+const express = require("express");
 const mongoose = require("mongoose");
+const gifts = require("./routes/gifts");
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 mongoose
   .connect("mongodb://localhost/giftus")
   .then(() => console.log("Connected to Database"))
   .catch((err) => console.log(err));
 
-const giftSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  price: Number,
-  category: {
-    type: Array,
-    validate: {
-      validator: function (v) {
-        const category = [
-          "Kid",
-          "Men",
-          "Women",
-          "Friend",
-          "Wife",
-          "Sister",
-          "Girlfriend",
-          "Boyfriend",
-          "Brother",
-          "Father",
-          "Mother",
-          "Teacher",
-          "Student",
-          "Boss",
-        ];
-        let flag = 1;
-        v.forEach((e) => {
-          const i = category.indexOf(e);
-          if (i === -1) {
-            flag = 0;
-            return false;
-          }
-        });
-        if (flag === 0) return false;
-        return true;
-      },
-    },
-  },
-  link: String,
-});
-
-const Gift = mongoose.model("gifts", giftSchema);
-
-const gift = new Gift({
-  name: "Kitty: Soft Toy",
-  price: 845,
-  category: ["Kid", "Girlfriend", "Sister"],
-  link:
-    "https://www.amazon.in/Ikea-Polyester-Fibres-Filling-White/dp/B07NW7LV31/ref=sr_1_5?crid=CCMUWS8ZCR3W&dchild=1&keywords=soft+toy+cat&qid=1610630161&sprefix=soft%2Caps%2C373&sr=8-5",
-});
-
-async function saveGift() {
-  try {
-    const result = await gift.save();
-    console.log(result);
-  } catch (ex) {
-    console.log("aa gye swad", ex);
-  }
-}
-
-saveGift();
+app.use("/api/gifts/", gifts);
