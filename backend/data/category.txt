@@ -1,0 +1,16 @@
+[
+      "Kid",
+      "Men",
+      "Women",
+      "Friend",
+      "Wife",
+      "Sister",
+      "Girlfriend",
+      "Boyfriend",
+      "Brother",
+      "Father",
+      "Mother",
+      "Teacher",
+      "Student",
+      "Boss",
+    ]
