@@ -22,7 +22,6 @@ router.get("/:id", async (req, res) => {
 router.post("/", jsonParser, async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
-  console.log("I'm here Somya", req);
   let gift = new Gift({
     name: req.body.name,
     price: req.body.price,
