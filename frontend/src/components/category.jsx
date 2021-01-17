@@ -29,7 +29,7 @@ class Category extends Component {
   }
   async componentDidMount() {
     const { data: categories } = await axios.get(
-      "http://localhost:3000/api/categories/"
+      "http://localhost:3900/api/categories/"
     );
     this.setState({ categories });
   }

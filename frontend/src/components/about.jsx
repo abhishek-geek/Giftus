@@ -10,7 +10,7 @@ const About = () => {
         <div className="row">
           <div className="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 ">
             <h1>
-              We are a community of developers here to make to{" "}
+              We are a community of developers here to help you{" "}
               <strong className="bn">find gifts for your loved ones..</strong>{" "}
             </h1>
           </div>

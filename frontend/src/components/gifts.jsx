@@ -61,10 +61,10 @@ class Gifts extends Component {
     }
   }
   async componentDidMount() {
-    const { data: gifts } = await axios.get("http://localhost:3000/api/gifts/");
+    const { data: gifts } = await axios.get("http://localhost:3900/api/gifts/");
     this.setState({ gifts: gifts });
     const { data: categories } = await axios.get(
-      "http://localhost:3000/api/categories/"
+      "http://localhost:3900/api/categories/"
     );
     this.setState({ categories });
     const categoryId = this.props.match.params.category;
