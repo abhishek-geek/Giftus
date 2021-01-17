@@ -1,0 +1,6 @@
+{
+  "jwtPrivateKey" : "giftus",
+  "db": "mongodb://localhost/giftus",
+  "port": "3900",
+  "requiresAuth": false
+}

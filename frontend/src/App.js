@@ -8,7 +8,6 @@ import NotFound from "./components/notFound";
 import Home from "./components/home";
 import About from "./components/about";
 
-
 class App extends Component {
   render() {
     return (
@@ -24,7 +23,6 @@ class App extends Component {
             <Redirect to="/not-found" />
           </Switch>
         </main>
-        
       </React.Fragment>
     );
   }

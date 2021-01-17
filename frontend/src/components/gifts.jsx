@@ -14,7 +14,6 @@ class Gifts extends Component {
     for (let i = 1; i <= this.state.total; i++) {
       arr.push(i);
     }
-    
 
     const categoryId = this.props.match.params.category;
     const { gifts } = this.state;
