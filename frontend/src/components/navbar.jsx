@@ -6,7 +6,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-lg text-white fixed-top">
         <Link className="navbar-brand" to="/">
-          Giftus
+          GiftUs
         </Link>
         <button
           className="navbar-toggler"
