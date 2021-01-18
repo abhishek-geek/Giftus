@@ -14,7 +14,6 @@ class Gifts extends Component {
     for (let i = 1; i <= this.state.total; i++) {
       arr.push(i);
     }
-    
 
     const categoryId = this.props.match.params.category;
     const { gifts } = this.state;
@@ -62,10 +61,10 @@ class Gifts extends Component {
     }
   }
   async componentDidMount() {
-    const { data: gifts } = await axios.get("http://localhost:3000/api/gifts/");
+    const { data: gifts } = await axios.get("http://localhost:3900/api/gifts/");
     this.setState({ gifts: gifts });
     const { data: categories } = await axios.get(
-      "http://localhost:3000/api/categories/"
+      "http://localhost:3900/api/categories/"
     );
     this.setState({ categories });
     const categoryId = this.props.match.params.category;
