@@ -7,6 +7,7 @@ import Navbar from "./components/navbar";
 import NotFound from "./components/notFound";
 import Home from "./components/home";
 import About from "./components/about";
+import RegisterUser from "./components/registerUser";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         <main className="container">
           <Switch>
             <Route path="/gifts/:category" component={Gifts}></Route>
+            <Route path="/register-user" component={RegisterUser}></Route>
             <Route path="/not-found" component={NotFound}></Route>
             <Route path="/about" exact component={About}></Route>
             <Route path="/category" exact component={Category}></Route>
