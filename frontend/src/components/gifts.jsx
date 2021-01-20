@@ -8,12 +8,7 @@ class Gifts extends Component {
     categories: [],
   };
   render() {
-    const category = this.props.match.params.category;
-    let arr = [];
-
-    for (let i = 1; i <= this.state.total; i++) {
-      arr.push(i);
-    }
+    // const category = this.props.match.params.category;
 
     const categoryId = this.props.match.params.category;
     const { gifts } = this.state;

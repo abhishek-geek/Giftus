@@ -3,9 +3,9 @@ import axios from "axios";
 
 class RegisterUser extends Component {
   state = {
-    name: "",
-    email: "",
-    password: "",
+    name: "Abhishek",
+    email: "abhishek@giftus",
+    password: "12345",
   };
 
   render() {
@@ -16,7 +16,7 @@ class RegisterUser extends Component {
             <label htmlFor="name">Name</label>
             <input
               onChange={(input) => {
-                this.setState({ name: input });
+                this.setState({ name: input.target.value });
               }}
               type="name"
               className="form-control"
@@ -28,7 +28,7 @@ class RegisterUser extends Component {
             <label htmlFor="email">Email address</label>
             <input
               onChange={(input) => {
-                this.setState({ email: input });
+                this.setState({ email: input.target.value });
               }}
               type="email"
               className="form-control"
@@ -41,7 +41,14 @@ class RegisterUser extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" className="form-control" id="password" />
+            <input
+              onChange={(input) => {
+                this.setState({ password: input.target.value });
+              }}
+              type="password"
+              className="form-control"
+              id="password"
+            />
           </div>
           <div className="form-group form-check">
             <input
@@ -54,7 +61,7 @@ class RegisterUser extends Component {
             </label>
           </div>
           <button
-            onClick={this.handleSubmit}
+            onClick={(e) => this.handleSubmit(e)}
             type="submit"
             className="btn btn-primary"
           >
@@ -65,21 +72,15 @@ class RegisterUser extends Component {
     );
   }
 
-  handleSubmit = async () => {
-    // const userData = {
-    //   name: this.state.name,
-    //   email: this.state.email,
-    //   password: this.state.password,
-    // };
-    const { name, email, password } = this.state;
-    console.log(name, email, password);
-    const data = await axios.post("http://localhost:3900/api/users/", {
-      name: name,
-      email: email,
-      password: password,
-    });
-    console.log("User data : ", data.data);
-    this.setState({ name, email, password });
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    const userData = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+    };
+    const res = await axios.post("http://localhost:3900/api/users/", userData);
+    console.log(res.headers["x-auth-token"]);
   };
 }
 

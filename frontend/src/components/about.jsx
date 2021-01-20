@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import web from "../images/man.svg";
-import Footer from "./footer";
+// import Footer from "./footer";
 
 const About = () => {
   return (

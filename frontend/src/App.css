@@ -40,6 +40,7 @@
 body {
   font-family: "Actor" !important;
   background: RGB(175, 238, 238, 0.5) !important;
+  margin-top: 5rem !important;
 }
 
 .home {
@@ -140,6 +141,5 @@ body {
 /* ----------------Form Stylings---------------- */
 
 .form {
-  margin-top: 10rem;
   font-family: sans-serif;
 }
