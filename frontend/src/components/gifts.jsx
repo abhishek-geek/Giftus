@@ -16,8 +16,8 @@ class Gifts extends Component {
     return (
       <div>
         <h1>Your Gifts from {categoryName} category here --:</h1>
-
-        {/* <iframe
+ 
+       {/* <iframe
           style={{
             width: "124px",
             height: "243px",
