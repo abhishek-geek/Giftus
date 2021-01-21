@@ -18,7 +18,7 @@ class Gifts extends Component {
         <h1>Your Gifts from {categoryName} category here --:</h1>
         <div className="row ml-2">
           {gifts.map((gift) => (
-            <div key={gift._id} className="col">
+            <div key={gift._id} className="col mb-4">
               <Gift gift={gift} />
             </div>
           ))}
