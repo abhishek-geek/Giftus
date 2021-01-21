@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 class Navbar extends Component {
   state = {
-    isLogin: true,
+    isLogin: false,
   };
   render() {
     return (
@@ -42,7 +42,7 @@ class Navbar extends Component {
             </li>
           </ul>
           <ul className="navbar-nav ml-auto text-white ">
-            {!this.isLogin && (
+            {!this.state.isLogin && (
               <li className="nav-item mr-2">
                 <NavLink
                   className="nav-link btn btn-info btn-outline-success btn-sm"
