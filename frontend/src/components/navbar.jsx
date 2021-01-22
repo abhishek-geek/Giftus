@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 class Navbar extends Component {
+  state = {
+    isLogin: false,
+  };
   render() {
     return (
       <nav className="navbar navbar-expand-lg text-white fixed-top">
@@ -38,20 +41,26 @@ class Navbar extends Component {
               </NavLink>
             </li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
-              Search
-            </button>
-          </form>
+          <ul className="navbar-nav ml-auto text-white ">
+            {!this.state.isLogin && (
+              <li className="nav-item mr-2">
+                <NavLink
+                  className="nav-link btn btn-info btn-outline-success btn-sm"
+                  to="/register-user"
+                >
+                  Signup
+                </NavLink>
+              </li>
+            )}
+            <li className="nav-item">
+              <NavLink
+                className="nav-link btn btn-info btn-outline-success btn-sm"
+                to="/login"
+              >
+                Login
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </nav>
     );

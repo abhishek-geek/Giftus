@@ -40,6 +40,7 @@
 body {
   font-family: "Actor" !important;
   background: RGB(175, 238, 238, 0.5) !important;
+  margin-top: 5rem !important;
 }
 
 .home {
@@ -140,6 +141,79 @@ body {
 /* ----------------Form Stylings---------------- */
 
 .form {
-  margin-top: 10rem;
   font-family: sans-serif;
+}
+
+
+
+/* ********************** */
+.styling{
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: RGBA(0,128,128,0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.styling::before{
+  position: relative;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background:whitesmoke !important;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.styling:hover::before{
+  top: -70%;
+  transform: akewY(390deg);
+}
+
+.styling .image{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.styling .image img{
+  max-width: 100%;
+  transition: 1s;
+}
+
+.styling:hover .image img{
+  max-width: 50%;
+}
+
+
+.styling .text{
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.styling .text .buy{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0px 12px;
+  position: relative;
+  color: whitesmoke;
+  text-decoration: none;
+  background: whitesmoke;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+
+.styling .text .buy:hover{
+  transform: scale(1.15);
+  transition: 0.5s;
 }
