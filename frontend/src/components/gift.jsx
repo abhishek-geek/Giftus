@@ -12,7 +12,7 @@ class Gift extends Component {
       <div>
         <div className="styling">
           <div className="image">
-            <img src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=IN&ASIN=B00HV3XI5I&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=giftus-21" />
+            <img src="https://m.media-amazon.com/images/I/81GGR4ZPZ0L._AC_UY327_FMwebp_QL65_.jpg" />
           </div>
           <div className="text">
           <h4>{gift.name}</h4>

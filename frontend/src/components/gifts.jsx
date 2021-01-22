@@ -41,11 +41,32 @@ class Gifts extends Component {
             );
           }
         })} */}
+        <div className="row">
+          <div className="col-4">
+
         {gifts.map((gift) => (
           <div key={gift._id}>
             <Gift gift={gift} />
           </div>
         ))}
+          </div>
+          <div className="col-4">
+
+        {gifts.map((gift) => (
+          <div key={gift._id}>
+            <Gift gift={gift} />
+          </div>
+        ))}
+          </div>
+          <div className="col-4">
+
+        {gifts.map((gift) => (
+          <div key={gift._id}>
+            <Gift gift={gift} />
+          </div>
+        ))}
+          </div>
+        </div>
       </div>
     );
   }
