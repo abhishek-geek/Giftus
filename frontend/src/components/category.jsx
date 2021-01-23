@@ -9,18 +9,15 @@ class Category extends Component {
   render() {
     const { categories } = this.state;
     return (
-      <div style={{ border: "2em solid lightblue", margin: "1em" }}>
+      <div className="row">
         {categories.map((category) => (
           <div
+            classname="col mr-5 styling"
+            style={{ border: "4px solid teal", margin: "5px" }}
             key={category._id}
-            style={{
-              border: "0.25em solid lightblue",
-              margin: "1em",
-              textAlign: "center",
-            }}
           >
             <Link to={`/gifts/${category._id}`}>
-              <h3>{category.name}</h3>
+              <h3 className="text">{category.name}</h3>
             </Link>
           </div>
         ))}

@@ -7,7 +7,8 @@ class Gift extends Component {
       <div>
         <div className="styling">
           <div className="image">
-            <img src="https://m.media-amazon.com/images/I/81GGR4ZPZ0L._AC_UY327_FMwebp_QL65_.jpg" />
+            <img src={gift.image} />
+            {/* <img src="https://m.media-amazon.com/images/I/81GGR4ZPZ0L._AC_UY327_FMwebp_QL65_.jpg" /> */}
           </div>
           <div className="text">
             <h4>{gift.name}</h4>

@@ -38,6 +38,7 @@ const giftSchema = new mongoose.Schema({
     },
   },
   link: String,
+  image: String,
 });
 
 const Gift = mongoose.model("gifts", giftSchema);
@@ -49,6 +50,7 @@ function validateGift(gift) {
     price: Joi.number().min(5).required(),
     category: Joi.array().min(1),
     link: Joi.string(),
+    image: Joi.string(),
   });
 
   return schema.validate(gift);

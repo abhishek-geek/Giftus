@@ -3,12 +3,10 @@ import axios from "axios";
 
 class RegisterUser extends Component {
   state = {
-
-    data: { name: "",  email: "",password: "" },
+    data: { name: "", email: "", password: "" },
     name: "Abhishek",
     email: "abhishek@giftus",
     password: "12345",
-
   };
 
   render() {
@@ -87,15 +85,15 @@ class RegisterUser extends Component {
   //   this.setState({ data });
   //     console.log("Somya");
 
-    // const { name, email, password } = this.state;
-    // console.log(name, email, password);
-    // const data = await axios.post("http://localhost:3900/api/users/", {
-    //   name: name,
-    //   email: email,
-    //   password: password,
-    // });
-    // console.log("User data : ", data.data);
-    // this.setState({ name, email, password });
+  // const { name, email, password } = this.state;
+  // console.log(name, email, password);
+  // const data = await axios.post("http://localhost:3900/api/users/", {
+  //   name: name,
+  //   email: email,
+  //   password: password,
+  // });
+  // console.log("User data : ", data.data);
+  // this.setState({ name, email, password });
   handleSubmit = async (e) => {
     e.preventDefault();
     const userData = {
@@ -105,7 +103,8 @@ class RegisterUser extends Component {
     };
     const res = await axios.post("http://localhost:3900/api/users/", userData);
     console.log(res.headers["x-auth-token"]);
-    };
-  }
+    localStorage.setItem("token", res.headers["x-auth-token"]);
+  };
+}
 
 export default RegisterUser;
