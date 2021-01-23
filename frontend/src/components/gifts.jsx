@@ -62,6 +62,7 @@ class Gifts extends Component {
           ))}
         </div>
       </div>
+      </div>
     );
   }
   filterGifts(categoryId) {
@@ -94,6 +95,7 @@ class Gifts extends Component {
     this.filterGifts(categoryId);
   }
 }
-</div>
+
+
 
 export default Gifts;
