@@ -73,27 +73,6 @@ class RegisterUser extends Component {
     );
   }
 
-  // handleSubmit = async () => {
-  //   // const userData = {
-  //   //   name: this.state.name,
-  //   //   email: this.state.email,
-  //   //   password: this.state.password,
-  //   // };
-  //   const { data:data } = await axios.get(
-  //     "http://localhost:3900/api/categories/"
-  //   );
-  //   this.setState({ data });
-  //     console.log("Somya");
-
-  // const { name, email, password } = this.state;
-  // console.log(name, email, password);
-  // const data = await axios.post("http://localhost:3900/api/users/", {
-  //   name: name,
-  //   email: email,
-  //   password: password,
-  // });
-  // console.log("User data : ", data.data);
-  // this.setState({ name, email, password });
   handleSubmit = async (e) => {
     e.preventDefault();
     const userData = {
@@ -102,8 +81,8 @@ class RegisterUser extends Component {
       password: this.state.password,
     };
     const res = await axios.post("http://localhost:3900/api/users/", userData);
-    console.log(res.headers["x-auth-token"]);
     localStorage.setItem("token", res.headers["x-auth-token"]);
+    this.props.history.push("/");
   };
 }
 

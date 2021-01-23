@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import web from "../images/balloons.svg";
-import Footer from "./footer";
 
 const Home = () => {
   return (
@@ -26,7 +25,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </section>
   );
 };

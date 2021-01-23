@@ -12,7 +12,7 @@ class Category extends Component {
       <div className="row">
         {categories.map((category) => (
           <div
-            classname="col mr-5 styling"
+            className="col mr-5 styling"
             style={{ border: "4px solid teal", margin: "5px" }}
             key={category._id}
           >

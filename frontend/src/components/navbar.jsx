@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 class Navbar extends Component {
   state = {
-    isLogin: false,
+    isLogin: "",
   };
   render() {
     return (
@@ -23,7 +23,7 @@ class Navbar extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto text-white">
             <li className="nav-item active">
               <NavLink className="nav-link" to="/">
@@ -52,7 +52,7 @@ class Navbar extends Component {
                 </NavLink>
               </li>
             )}
-            <li className="nav-item">
+            <li className="nav-item mr-2">
               <NavLink
                 className="nav-link btn btn-info btn-outline-success btn-sm"
                 to="/login"
@@ -64,6 +64,15 @@ class Navbar extends Component {
         </div>
       </nav>
     );
+  }
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    console.log(token);
+    if (token.length > 0) {
+      this.setState({ isLogin: "true" });
+    }
+    this.setState({ isLogin: "" });
+    console.log(this.state.isLogin);
   }
 }
 

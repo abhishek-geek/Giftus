@@ -127,12 +127,11 @@ body {
 } */
 
 .footer {
-  margin-top: 1rem;
   padding: 1rem;
   background-color: cadetblue;
   color: white;
-  position: fixed;
-  bottom: 0;
+  position: relative;
+  bottom: 0 !important;
   left: 0;
   width: 100%;
   height: 65px;
@@ -144,35 +143,33 @@ body {
   font-family: sans-serif;
 }
 
-
-
 /* ********************** */
-.styling{
+.styling {
   position: relative;
   width: 320px;
   height: 420px;
-  background: RGBA(0,128,128,0.4);
+  background: RGBA(0, 128, 128, 0.4);
   border-radius: 20px;
   overflow: hidden;
   align-items: center;
 }
 
-.styling::before{
+.styling::before {
   position: relative;
   top: -50%;
   width: 100%;
   height: 100%;
-  background:whitesmoke !important;
+  background: whitesmoke !important;
   transform: skewY(345deg);
   transition: 0.5s;
 }
 
-.styling:hover::before{
+.styling:hover::before {
   top: -70%;
   transform: akewY(390deg);
 }
 
-.styling .image{
+.styling .image {
   position: relative;
   width: 100%;
   display: flex;
@@ -182,17 +179,16 @@ body {
   z-index: 1;
 }
 
-.styling .image img{
+.styling .image img {
   max-width: 100%;
   transition: 1s;
 }
 
-.styling:hover .image img{
+.styling:hover .image img {
   max-width: 50%;
 }
 
-
-.styling .text{
+.styling .text {
   position: relative;
   align-items: center;
   display: flex;
@@ -202,7 +198,7 @@ body {
   z-index: 1;
 }
 
-.styling .text .buy{
+.styling .text .buy {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0px 12px;
   position: relative;
@@ -213,7 +209,7 @@ body {
   text-transform: uppercase;
 }
 
-.styling .text .buy:hover{
+.styling .text .buy:hover {
   transform: scale(1.15);
   transition: 0.5s;
 }
