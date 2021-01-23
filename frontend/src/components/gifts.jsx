@@ -24,6 +24,7 @@ class Gifts extends Component {
           ))}
         </div>
       </div>
+      
     );
   }
   filterGifts(categoryId) {

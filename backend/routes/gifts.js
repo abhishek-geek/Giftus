@@ -27,6 +27,7 @@ router.post("/", jsonParser, async (req, res) => {
     price: req.body.price,
     category: req.body.category,
     link: req.body.link,
+    image: req.body.image,
   });
   gift = await gift.save();
 
@@ -44,6 +45,7 @@ router.put("/:id", jsonParser, async (req, res) => {
       price: req.body.price,
       category: req.params.category,
       link: req.params.link,
+      image: req.params.image,
     },
     {
       new: true,
