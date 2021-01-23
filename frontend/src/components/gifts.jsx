@@ -14,7 +14,7 @@ class Gifts extends Component {
     const { gifts } = this.state;
     const categoryName = this.getCategoryName(categoryId);
     return (
-      <div className="container-fluid">
+      <div>
         <h1>Your Gifts from {categoryName} category here --:</h1>
         <div className="row ml-2">
           {gifts.map((gift) => (
