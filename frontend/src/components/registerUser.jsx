@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import auth from "../services/auth";
 
 class RegisterUser extends Component {
   state = {
@@ -81,8 +82,8 @@ class RegisterUser extends Component {
       password: this.state.password,
     };
     const res = await axios.post("http://localhost:3900/api/users/", userData);
-    localStorage.setItem("token", res.headers["x-auth-token"]);
-    this.props.history.push("/");
+    auth.setToken(res.headers["x-auth-token"]);
+    window.location.assign("/");
   };
 }
 

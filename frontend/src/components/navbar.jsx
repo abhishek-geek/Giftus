@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 
 class Navbar extends Component {
   state = {
-    isLogin: "",
+    user: this.props.isLogin,
   };
   render() {
+    const { user } = this.state;
     return (
       <nav className="navbar navbar-expand-lg text-white fixed-top">
         <Link className="navbar-brand" to="/">
@@ -41,8 +42,8 @@ class Navbar extends Component {
               </NavLink>
             </li>
           </ul>
-          <ul className="navbar-nav ml-auto text-white ">
-            {!this.state.isLogin && (
+          {!user && (
+            <ul className="navbar-nav ml-auto text-white ">
               <li className="nav-item mr-2">
                 <NavLink
                   className="nav-link btn btn-info btn-outline-success btn-sm"
@@ -51,28 +52,33 @@ class Navbar extends Component {
                   Signup
                 </NavLink>
               </li>
-            )}
-            <li className="nav-item mr-2">
-              <NavLink
-                className="nav-link btn btn-info btn-outline-success btn-sm"
-                to="/login"
-              >
-                Login
-              </NavLink>
-            </li>
-          </ul>
+
+              <li className="nav-item mr-2">
+                <NavLink
+                  className="nav-link btn btn-info btn-outline-success btn-sm"
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              </li>
+            </ul>
+          )}
+          {user && (
+            <ul className="navbar-nav ml-auto text-white">
+              <li className="nav-item mr-2">{this.props.isLogin.name}</li>
+              <li className="nav-item mr-2">
+                <NavLink
+                  className="nav-link btn btn-info btn-outline-success btn-sm"
+                  to="/logout"
+                >
+                  Logout
+                </NavLink>
+              </li>
+            </ul>
+          )}
         </div>
       </nav>
     );
-  }
-  componentDidMount() {
-    const token = localStorage.getItem("token");
-    console.log(token);
-    if (token.length > 0) {
-      this.setState({ isLogin: "true" });
-    }
-    this.setState({ isLogin: "" });
-    console.log(this.state.isLogin);
   }
 }
 
