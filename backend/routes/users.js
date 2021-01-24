@@ -32,4 +32,19 @@ router.post("/", jsonParser, async (req, res) => {
     .send(_.pick(user, ["_id", "name", "email"]));
 });
 
+router.post("/login", jsonParser, async (req, res) => {
+  console.log(req.body);
+  // const { error } = validate(req.body);
+  // if (error) return res.status(400).send(error.details[0].message);
+
+  let user = await User.findOne({ email: req.body.email });
+  if (!user) return res.status(400).send("User not found.");
+
+  const token = user.generateAuthToken();
+  res
+    .header("x-auth-token", token)
+    .header("access-control-expose-headers", "x-auth-token")
+    .send(_.pick(user, ["_id", "name", "email"]));
+});
+
 module.exports = router;

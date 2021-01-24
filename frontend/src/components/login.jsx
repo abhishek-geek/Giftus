@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import auth from "../services/auth";
 
 class Login extends Component {
   state = {
@@ -59,12 +60,16 @@ class Login extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const userData = {
-      name: this.state.name,
       email: this.state.email,
       password: this.state.password,
     };
-    const res = await axios.post("http://localhost:3900/api/users/", userData);
+    const res = await axios.post(
+      "http://localhost:3900/api/users/login",
+      userData
+    );
     console.log(res.headers["x-auth-token"]);
+    auth.setToken(res.headers["x-auth-token"]);
+    window.location.assign("/");
   };
 }
 
